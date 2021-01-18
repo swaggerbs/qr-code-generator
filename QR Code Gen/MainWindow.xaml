@@ -1,0 +1,17 @@
+﻿<Window x:Class="QR_Code_Gen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QR_Code_Gen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ComboBox  ItemsSource="{Binding Types}" SelectedItem="{Binding CurrentItem}" HorizontalAlignment="Left" Margin="33,21,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image Source="{Binding QRCode}" HorizontalAlignment="Left" Height="298" Margin="370,75,0,0" VerticalAlignment="Top" Width="380"/>
+        <TextBox Text="{Binding InputData}" HorizontalAlignment="Left" Height="23" Margin="33,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
+        <TextBox Text="{Binding InputData2}" HorizontalAlignment="Left" Height="23" Margin="33,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254"/>
+        <Button Content="Сгенерировать" Command="{Binding GenerateButtonClick}" HorizontalAlignment="Left" Margin="33,173,0,0" VerticalAlignment="Top" Width="99" Height="33"/>
+        <Button Content="Save QRCode as JPEG" IsEnabled="{Binding IsPngEnabled}" Command="{Binding SaveQRCodeBtn}" HorizontalAlignment="Left" Margin="33,273,0,0" VerticalAlignment="Top" Width="129" Height="33"/>
+    </Grid>
+</Window>
